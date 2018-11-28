@@ -1,0 +1,54 @@
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\Content\white1x1.xnb
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.exe.config
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.exe
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.pdb
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\VAIO\source\repos\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\VAIO\source\repos\Game2\Game2\obj\x86\Debug\Game2.csprojAssemblyReference.cache
+C:\Users\VAIO\source\repos\Game2\Game2\obj\x86\Debug\Game2.csproj.CoreCompileInputs.cache
+C:\Users\VAIO\source\repos\Game2\Game2\obj\x86\Debug\Game2.csproj.CopyComplete
+C:\Users\VAIO\source\repos\Game2\Game2\obj\x86\Debug\Windows Snake.exe
+C:\Users\VAIO\source\repos\Game2\Game2\obj\x86\Debug\Windows Snake.pdb
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\Content\white1x1.xnb
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.exe.config
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.exe
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\Windows Snake.pdb
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\obj\x86\Debug\Game2.csproj.CoreCompileInputs.cache
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\obj\x86\Debug\Game2.csproj.CopyComplete
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\obj\x86\Debug\Windows Snake.exe
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\obj\x86\Debug\Windows Snake.pdb
+C:\Users\VAIO\Desktop\портфолио\Snake\Game2\Game2\obj\x86\Debug\Game2.csprojAssemblyReference.cache

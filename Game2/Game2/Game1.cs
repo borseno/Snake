@@ -22,7 +22,6 @@ namespace Game2
             X = 0;
             Y = 0;
         }
-
         public int CompareTo(object a)
         {
             if (a is Entity entity)
@@ -35,7 +34,7 @@ namespace Game2
         }
         public override string ToString()
         {
-            return this.GetType().Name + " coords: X = " + this.X + " Y = " + this.Y;
+            return $"{this.GetType().Name} {{ X: this.X Y: this.Y }}";
         }
     }
 
@@ -44,20 +43,17 @@ namespace Game2
         public SnakePoint(int x, int y) : base(x, y) { }
         public SnakePoint() : base() { }
     }
-
     class Hash : Entity
     {
         public Hash(int x, int y) : base(x, y) { }
         public Hash() : base() { }
     }
-
-
     class Snake
     {
+        private int _speed;
+
         public LinkedList<SnakePoint> SnakePoints { get; private set; }
         public char Direction { get; private set; } = 'd';
-
-        private int _speed;
         public int Speed
         {
             get
@@ -73,38 +69,36 @@ namespace Game2
             }
         }
 
-        public bool Move(char? direction = null, int? Speed = null)
+        public bool Move(char? direction = null, int? speed = null)
         {
-            if (Speed == null)
-                Speed = _speed;
+            if (speed == null)
+                speed = _speed;
+            if (direction == null)
+                direction = this.Direction;
 
             if (direction == 'd')
             {
                 SnakePoints.RemoveLast();
-                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X + (int)Speed, SnakePoints.First.Value.Y));
+                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X + (int)speed, SnakePoints.First.Value.Y));
                 this.Direction = (char)direction;
             }
             else if (direction == 's')
             {
                 SnakePoints.RemoveLast();
-                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X, SnakePoints.First.Value.Y + (int)Speed));
+                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X, SnakePoints.First.Value.Y + (int)speed));
                 this.Direction = (char)direction;
             }
             else if (direction == 'a')
             {
                 SnakePoints.RemoveLast();
-                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X - (int)Speed, SnakePoints.First.Value.Y));
+                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X - (int)speed, SnakePoints.First.Value.Y));
                 this.Direction = (char)direction;
             }
             else if (direction == 'w')
             {
                 SnakePoints.RemoveLast();
-                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X, SnakePoints.First.Value.Y - (int)Speed));
+                SnakePoints.AddFirst(new SnakePoint(SnakePoints.First.Value.X, SnakePoints.First.Value.Y - (int)speed));
                 this.Direction = (char)direction;
-            }
-            else if (direction == null)
-            {
-                Move(this.Direction, Speed);
             }
             return true;
         }
@@ -118,19 +112,17 @@ namespace Game2
             SnakePoints = new LinkedList<SnakePoint>();
             SnakePoints.AddLast(new SnakePoint(30, 30));
             SnakePoints.AddLast(new SnakePoint(30, 60));
-
             Direction = 's';
         }
-        public Snake(int Speed)
+        public Snake(int speed)
         {
-            this.Speed = Speed;
+            this.Speed = speed;
         }
-
-        public Snake(int Speed, IEnumerable<SnakePoint> snakePoints) : this(Speed)
+        public Snake(int speed, IEnumerable<SnakePoint> snakePoints) : this(speed)
         {
             SnakePoints = new LinkedList<SnakePoint>(snakePoints);
         }
-        public Snake(int Speed, params SnakePoint[] snakePoints) : this(Speed)
+        public Snake(int speed, params SnakePoint[] snakePoints) : this(speed)
         {
             SnakePoints = new LinkedList<SnakePoint>(snakePoints);
         }
@@ -164,16 +156,14 @@ namespace Game2
         protected override void Initialize()
         {
             Random rnd = new Random();
-
             SnakeSpeed = 30;
-
             hash = new Hash();
             SnakePoint first = new SnakePoint();
-            foreach (var i in new Entity[] { hash, first } )
-            {
-                InitializeEntity(i);
-            }
-            SnakePoint second = rnd.Next(1, 2) == 1 ? // 50-50 : X or Y, where the snake extends
+
+            InitializeEntity(hash);
+            InitializeEntity(first);
+
+            SnakePoint second = rnd.Next(1, 3) == 1 ? // 50-50 : X or Y, where the snake extends
                 new SnakePoint(first.X + SnakeSpeed, first.Y)
                 : new SnakePoint(first.X, first.Y + SnakeSpeed);
 
@@ -194,18 +184,15 @@ namespace Game2
             entity.X = (rnd.Next(0, Width - SnakeSpeed) / SnakeSpeed) * SnakeSpeed;
             entity.Y = (rnd.Next(0, Height - SnakeSpeed) / SnakeSpeed) * SnakeSpeed;
         }
-
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             WhiteTexture = Content.Load<Texture2D>("white1x1");
         }
-
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            Content.Unload();
         }
-
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -231,15 +218,14 @@ namespace Game2
             }
             //else
             //{
-            //    foreach (var i in from t in Keyboard.GetState().GetPressedKeys()
-            //                      where new Keys[] { Keys.A, Keys.W, Keys.D, Keys.S }.Contains(t) // Like in SQL: t IN (A, W, D, S) =D
-            //                      select t)
+            //    foreach (var i in (from key in Keyboard.GetState().GetPressedKeys()
+            //                       where new Keys[] { Keys.A, Keys.W, Keys.D, Keys.S }.Contains(key) 
+            //                       select key).Reverse())
             //    {
             //        NextWay.Add(i);
             //    }
             //}
         }
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -247,7 +233,7 @@ namespace Game2
             spriteBatch.Begin();
 
             foreach (var i in snake.SnakePoints)
-                spriteBatch.Draw(WhiteTexture, new Vector2(i.X, i.Y), 
+                spriteBatch.Draw(WhiteTexture, new Vector2(i.X, i.Y),
                     null, Color.Orange, 0, Vector2.Zero, SnakeSpeed, SpriteEffects.None, 1);
 
             spriteBatch.Draw(WhiteTexture, new Vector2(hash.X, hash.Y),
@@ -258,7 +244,7 @@ namespace Game2
             base.Draw(gameTime);
         }
 
-        private bool IsContinious(Keys[] first, Keys[] second)
+        private bool AreTheSame(Keys[] first, Keys[] second)
         {
             for (int i = 0; i < first.Length; i++)
             {
@@ -289,39 +275,39 @@ namespace Game2
 
         private void MoveSnake()
         {
-            bool MoveIsDone = false;
+            bool moveIsDone = false;
 
             if (NextWay.Count != 0) // There are keys left to handle
             {
-                MoveIsDone = snake.Move(NextWay.Last().ToString().ToLower()[0]);
-                NextWay.RemoveAt(NextWay.Count -1);
+                moveIsDone = snake.Move(NextWay.First().ToString().ToLower()[0]);
+                NextWay.RemoveAt(0);
             }
             else
             {
-                Keys[] keys = Keyboard.GetState().GetPressedKeys();
+                Keys[] keys = Keyboard.GetState().GetPressedKeys().Reverse().ToArray();
 
                 int keysIterator;
-                for (keysIterator = (keys.Length - 1); keysIterator >= 0 && !MoveIsDone; keysIterator--)
+                for (keysIterator = 0; keysIterator < keys.Length && !moveIsDone; keysIterator++)
                 {
-                    if (keys[keysIterator] == Keys.W)
-                        MoveIsDone = snake.Move('w');
-                    else if (keys[keysIterator] == Keys.A)
-                        MoveIsDone = snake.Move('a');
-                    else if (keys[keysIterator] == Keys.S)
-                        MoveIsDone = snake.Move('s');
-                    else if (keys[keysIterator] == Keys.D)
-                        MoveIsDone = snake.Move('d');
+                    if (keys[keysIterator] == Keys.W && snake.Direction != 's')
+                        moveIsDone = snake.Move('w');
+                    else if (keys[keysIterator] == Keys.A && snake.Direction != 'd')
+                        moveIsDone = snake.Move('a');
+                    else if (keys[keysIterator] == Keys.S && snake.Direction != 'w')
+                        moveIsDone = snake.Move('s');
+                    else if (keys[keysIterator] == Keys.D && snake.Direction != 'a')
+                        moveIsDone = snake.Move('d');
                 }
-                if (!MoveIsDone)
+                if (!moveIsDone)
                     snake.Move();
                 else
                 {
-                    for (; keysIterator >= 0; keysIterator--)
-                    {
-                        if (keys[keysIterator] == Keys.W || keys[keysIterator] == Keys.S
-                            || keys[keysIterator] == Keys.A || keys[keysIterator] == Keys.D)
-                            NextWay.Add(keys[keysIterator]); // Remain unhandled
-                    }
+                    //for (; keysIterator < keys.Length; keysIterator++)
+                    //{
+                    //    if (keys[keysIterator] == Keys.W || keys[keysIterator] == Keys.S
+                    //        || keys[keysIterator] == Keys.A || keys[keysIterator] == Keys.D)
+                    //        NextWay.Insert(...); // Remain unhandled
+                    //}
                 }
             }
         }
